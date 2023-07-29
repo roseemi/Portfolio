@@ -1,0 +1,525 @@
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    background: #000836;
+    color: #f4f4f4;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #f4f4f4;
+}
+
+h1 {
+    line-height: 1.5em;
+    font-size: 5rem;
+    transition: 0.3s ease-out;
+}
+
+h1:hover {
+    font-size: 5.5rem;
+    color: #ec2a83;
+    transition: 0.3s ease-out;
+}
+
+h2 {
+    font-size: 2.5rem;
+    transition: 0.3s ease-out;
+}
+
+h2:hover {
+    font-size: 3rem;
+    color: #ec2a83;
+    transition: 0.3s ease-out;
+}
+
+p {
+    margin: 0;
+    line-height: 1.5em;
+}
+
+a {
+    text-decoration: none;
+    line-height: 1.5em;
+    color: #000836;
+    font-weight: 600;
+    transition: 0.5s ease-out;
+}
+
+a:hover {
+    filter: invert(95);
+    transition: 0.5s ease-out;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    list-style: none;
+    background-color: #f4f4f4;
+    color: #ec2a83;
+    border-radius: 10%;
+    padding: 0.5em;
+}
+
+span {
+    color: #ec2a83;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    font-size: 1rem;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 4em;
+    background-color: #ec2a83;
+    z-index: 999;
+}
+
+menu {
+    display: flex;
+    justify-content: center;
+}
+
+menu > a {
+    padding-right: 2em;
+}
+
+main {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+main > section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    scroll-snap-align: start;
+    overflow: hidden;
+    padding-top: 2em;
+}
+
+.hero {
+    background-color: #000836;
+    /*
+    Image by <a href="https://www.freepik.com/free-vector/halftone-background-with-circles_13295064.htm#query=portfolio%20background&position=21&from_view=keyword&track=ais">Freepik</a>
+    */
+    background-image: url("../assets/masthead.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+    text-align: center;
+}
+
+.hero > div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 10em 0 0;
+    z-index: 1;
+}
+
+.hero > div:nth-child(1) {
+    padding: 0 10em;
+    animation: fadeIn 1s ease-in both;
+    grid-column: 1/5;
+    grid-row: 2/3;
+}
+
+.hero > div:nth-child(2) {
+    animation: fadeIn 1s ease-in both;
+    padding: 1em;
+    gap: 1em;
+    grid-column: 2/4;
+    grid-row: 4/5;
+}
+
+/* Add a "border" BEFORE (on top) of the div */
+.hero > div:nth-child(2):before {
+    content: "";
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0.2em;
+    width: 50px;
+}
+
+/* Add a "border" AFTER (on the left) of the div */
+.hero > div:nth-child(2):after {
+    content: "";
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 0.2em;
+}
+
+.hero a {
+    color: #f4f4f4;
+}
+
+.spinner {
+    width: 20em;
+    height: 20em;
+    border-radius: 100%;
+    display: inline-block;
+    border-top: 0.5em solid #ec2a83;
+    border-right: 0.5em solid transparent;
+    border-left: 0.5em solid #ec2a83;
+    animation: rotation 2s linear infinite;
+}
+
+#spinner-one {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#spinner-two {
+    visibility: hidden;
+    animation: rotation 1.5s linear infinite;
+}
+
+.arrow {
+    width: 15em;
+    height: 0.3em;
+    animation: shoot 3s linear infinite;
+    position: relative;
+    opacity: 0;
+}
+
+#arrow-one {
+    background-color: #f4f4f4;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#arrow-two {
+    background-color: #ec2a83;
+    animation: shoot 1.5s linear infinite;
+    grid-column: 4;
+    grid-row: 3;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(0,8,54);
+    background: linear-gradient(180deg, rgba(0,8,54,1) 0%, rgba(0,17,60,1) 35%, rgba(0,76,152,1) 100%);
+    padding: 2em 2em;
+    box-sizing: border-box;
+}
+
+.about > div > p {
+    padding: 5em 0;
+}
+
+.line {
+    width: 100%;
+    height: 1em;
+    background-color: #000836;
+}
+
+.portfolio {
+    background: rgb(0,8,54);
+}
+
+.showcase {
+    padding: 2em;
+}
+
+.tile {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #ec2a83;
+    margin: 2em 0; /**/
+    overflow: hidden;
+    box-sizing: border-box; /**/
+    height: 12em; /**/
+}
+
+.tile:nth-of-type(1) {
+
+}
+
+.tile h3 {
+
+}
+
+.tile p {
+    font-size: 0.5rem;
+    padding: 0 2em 2em;
+}
+
+.tile a {
+    filter: invert(95);
+}
+
+.tile div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease-in-out;
+}
+
+.tile div:nth-child(1) {
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+.skills {
+    background: rgb(0,8,54);
+    background: linear-gradient(360deg, rgb(7, 18, 77) 0%, rgb(15, 41, 98) 35%, rgba(0,76,152,1) 100%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+    padding: 2em;
+    box-sizing: border-box;
+    gap: 2em
+}
+
+.skills h3 {
+    font-size: 2rem;
+    grid-column: 1/4;
+    grid-row: 1;
+}
+
+.fa {
+    font-size: 3rem;
+}
+/* Make all of the .svg files the same colour and size as the rest of the icons */
+.icon {
+    filter: invert(95);
+    height: auto;
+    width: 3em;
+}
+
+footer {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000836;
+    color: #ec2a83;
+    scroll-snap-align: start;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes shoot {
+    0%
+    {
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+    }
+    70%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        transform: rotate(315deg) translateX(-1000px);
+        opacity: 0;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    html {
+        font-size: 1.75rem
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    h1 {
+        line-height: 1.5em;
+        font-size: 4rem;
+    }
+
+    h1:hover {
+        font-size: 4.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h2:hover {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        padding-bottom: 1.2em;
+    }
+
+    body {
+        font-size: 0.7rem;
+    }
+
+    .hero {
+        text-align: left;
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        grid-template-rows: repeat(4, minmax(0, 1fr));
+    }
+
+    .hero > div:nth-child(1) {
+        padding: 0 10em;
+        grid-column: 1/6;
+        grid-row: 2/4;
+    }
+
+    .hero > div:nth-child(2) {
+        grid-column: 6/7;
+        grid-row: 2/4;
+    }
+
+    #spinner-one {
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    #spinner-two {
+        visibility: visible;
+        grid-column: 4/5;
+        grid-row: 1;
+    }
+
+    #arrow-one {
+        grid-column: 2;
+        grid-row: 0;
+    }
+
+    #arrow-two {
+        grid-column: 6;
+        grid-row: 1;
+    }
+
+    .hero > div:nth-child(2):before {
+        width: 100px;
+    }
+
+    .hero > div:nth-child(2):after {
+        height: 100px;
+    }
+
+    .about {
+        padding: 10em 10em;
+    }
+
+    .showcase {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .tile {
+        align-items: flex-end;
+        max-width: 20%;
+        height: 60%;
+    }
+
+    .tile h3 {
+        padding-top: 3em;
+        line-height: 3em;
+    }
+
+    .tile div:nth-child(1) {
+        height: 0;
+        width: 100%;
+        align-self: flex-start;
+        overflow: hidden;
+    }
+
+    .tile:hover div:nth-child(1) {
+        height: 20%;
+        transition: 0.5s ease-in;
+    }
+
+    .tile div:nth-child(2) {
+        text-align: center;
+        height: 30%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: 0.5s ease-in-out;
+    }
+
+    .tile:hover div:nth-child(2) {
+        height: 60%;
+        transition: 0.5s ease-in;
+    }
+
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        padding: 10em 10em;
+        gap: 3em 5em;
+    }
+
+    .skills h3 {
+        grid-column: 1/5;
+        grid-row: 1;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

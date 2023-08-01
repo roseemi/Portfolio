@@ -301,6 +301,9 @@ main > section {
 }
 
 .tile:nth-of-type(1) {
+    /*
+    <a href="https://www.freepik.com/free-vector/copywriting-social-media-post-content-marketing-internet-commercial-cartoon-character-writing-text-advertising-promotional-strategy-concept-illustration_11668497.htm#page=2&query=document&position=16&from_view=search&track=sph">Image by vectorjuice</a> on Freepik
+    */
     background-image: url("../assets/quiz.jpg");
 }
 

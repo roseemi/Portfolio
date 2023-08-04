@@ -127,8 +127,9 @@ menu {
 }
 
 /* Child combinator */
-menu > a {
-    padding-right: 2em;
+menu > li {
+    background-color: inherit;
+    padding-right: 1vw;
 }
 
 main {
@@ -373,7 +374,7 @@ main > section {
     transition: 0.2s ease-in-out;
 }
 
-.fas:hover {
+.tile div .fas:hover {
     font-size: 3rem;
 }
 
@@ -445,6 +446,14 @@ footer p {
 footer a {
     color: #f4f4f4;
     text-decoration: underline;
+}
+
+footer a:hover,
+footer a:focus,
+footer a:hover,
+footer a:active  {
+    filter: none;
+    color: aqua;
 }
 /********************
       ANIMATIONS

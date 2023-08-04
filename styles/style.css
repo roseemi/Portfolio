@@ -385,7 +385,7 @@ main > section {
     background: rgb(0,8,54);
     background: linear-gradient(360deg, rgb(7, 18, 77) 0%, rgb(15, 41, 98) 35%, rgba(0,76,152,1) 100%);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(6em, 1fr));
     grid-template-rows: auto;
     justify-items: center;
     align-content: space-evenly;

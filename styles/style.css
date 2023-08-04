@@ -1,6 +1,15 @@
 /********************
     MAIN ELEMENTS
 *********************/
+/* Externally hosted body font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Internally hosted header font */
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url('../assets/JosefinSans-Regular.ttf') format("opentype");
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 10px;
@@ -17,12 +26,14 @@ html {
     color: #f4f4f4;
 }
 
+/* Type/element selector */
 h1 {
     font-size: clamp(5rem, 8rem + 1.5vw, 10rem);
     transition: 0.3s ease-out;
     letter-spacing: -0.4rem;
 }
 
+/* Pseudo-element selector */
 h1:hover {
     font-size: clamp(5.5rem, 8rem + 1.5vw, 10.5rem);
     letter-spacing: -0.3rem;
@@ -56,9 +67,16 @@ a {
     transition: 0.5s ease-out;
 }
 
-a:hover {
+a:link,
+a:visited {
+    filter: none;
+}
+
+a:hover,
+a:focus,
+a:hover,
+a:active  {
     filter: invert(95);
-    transition: 0.5s ease-out;
 }
 
 ul {
@@ -71,7 +89,9 @@ li {
     background-color: #f4f4f4;
     color: #ec2a83;
     border-radius: 10%;
-    padding: 0.5em;
+    padding: 0.3em;
+    margin: 0.2em;
+    font-size: calc(0.3rem * 1vw);
 }
 
 span {
@@ -106,6 +126,7 @@ menu {
     padding-left: 1em;
 }
 
+/* Child combinator */
 menu > a {
     padding-right: 2em;
 }
@@ -128,6 +149,7 @@ main > section {
 /********************
         INTRO
 *********************/
+/* Class selector */
 .hero {
     background-color: #000836;
     /*
@@ -191,8 +213,15 @@ main > section {
     width: 0.2em;
 }
 
-.hero a {
+.hero a,
+.hero p {
     color: #f4f4f4;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.hero a:hover{
+    filter: none;
+    color: #ec2a83;
 }
 
 .spinner {
@@ -271,6 +300,7 @@ main > section {
 .portfolio {
     background: rgb(0,8,54);
     height: max-content;
+    padding: 5em 0 10em 0;
 }
 
 .showcase {
@@ -285,7 +315,6 @@ main > section {
 }
 
 .tile {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -301,14 +330,19 @@ main > section {
 }
 
 .tile:nth-of-type(1) {
-    /*
-    <a href="https://www.freepik.com/free-vector/copywriting-social-media-post-content-marketing-internet-commercial-cartoon-character-writing-text-advertising-promotional-strategy-concept-illustration_11668497.htm#page=2&query=document&position=16&from_view=search&track=sph">Image by vectorjuice</a> on Freepik
-    */
     background-image: url("../assets/quiz.jpg");
 }
 
-.tile p {
-    padding: 0 2em 2em;
+.tile:nth-of-type(2) {
+    background-image: url("../assets/doctor.jpg");
+}
+
+.tile:nth-of-type(3) {
+    background-image: url("../assets/class.jpg");
+}
+
+.tile:nth-of-type(4) {
+    background-image: url("../assets/commerce.png");
 }
 
 .tile a {
@@ -316,7 +350,12 @@ main > section {
     width: 100%;
 }
 
+.tile h3 {
+    padding: 2em 0;
+}
+
 .tile div {
+    font-size: calc(0.3rem * 1vw);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -327,12 +366,15 @@ main > section {
     background-color: rgba(0, 0, 0, 0.5);
     transition: 0.5s ease-in-out;
     padding: 0.5em;
-    box-sizing: border-box;
+}
+
+.tile div .fas {
+    padding-top: 0.5em;
+    transition: 0.2s ease-in-out;
 }
 
 .fas:hover {
-    font-size: 1.2em;
-    transition: 1s ease-in-out;
+    font-size: 3rem;
 }
 
 /********************
@@ -342,10 +384,10 @@ main > section {
     background: rgb(0,8,54);
     background: linear-gradient(360deg, rgb(7, 18, 77) 0%, rgb(15, 41, 98) 35%, rgba(0,76,152,1) 100%);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
     grid-template-rows: auto;
     justify-items: center;
-    align-items: center;
+    align-content: space-evenly;
     padding: 2em;
     box-sizing: border-box;
 }
@@ -353,7 +395,7 @@ main > section {
 .skills h3 {
     font-size: 4rem;
     padding-top: 2em;
-    grid-column: 1/4;
+    grid-column: 1/-1;
     grid-row: 1;
 }
 
@@ -391,8 +433,19 @@ footer {
     background-color: #000836;
     color: #ec2a83;
     scroll-snap-align: start;
+    padding: 1em;
+    text-align: center;
 }
 
+footer p {
+    display: block;
+    margin: 2em 0;
+}
+
+footer a {
+    color: #f4f4f4;
+    text-decoration: underline;
+}
 /********************
       ANIMATIONS
 *********************/
@@ -436,18 +489,14 @@ footer {
 /********************
       RESPONSIVE
 *********************/
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
 
-}
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
-}
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .showcase {
         padding: 2em 2em 10em 2em;
+    }
+    .portfolio {
+        padding: 0;
     }
     .tile {
         flex-basis: 40%;
@@ -530,11 +579,7 @@ footer {
     }
 
     .tile {
-        height: 60vh;
-    }
-
-    .tile h3 {
-        padding-top: 1em;
+        max-height: 60vh;
     }
 
     .tile div {
@@ -549,20 +594,6 @@ footer {
     .tile:hover div {
         height: 90%;
         transition: 0.5s ease-in;
-    }
-
-    .skills {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto;
-        padding: 10em 10em;
-        gap: 2em;
-    }
-
-    .skills h3 {
-        padding-top: 0;
-        grid-column: 1/5;
-        grid-row: 1;
     }
 
     .fa {
@@ -582,6 +613,11 @@ footer {
     .showcase {
         height: 100%;
         padding: 2em;
+    }
+
+    .skills {
+        grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+        padding: 0;
     }
 
     .tile {

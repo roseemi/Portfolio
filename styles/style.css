@@ -567,7 +567,7 @@ footer a:active  {
 
     #arrow-one {
         grid-column: 2;
-        grid-row: 0;
+        grid-row: 1;
     }
 
     #arrow-two {

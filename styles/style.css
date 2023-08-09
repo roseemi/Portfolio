@@ -315,6 +315,16 @@ main > section {
     padding: 2em 2em 4em 2em;
 }
 
+/* Attempted a grid layout for the cards, but found that flexbox worked better for my desired behaviour */
+/*.showcase {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-template-rows: auto;
+    gap: 1em;
+}*/
+
 .tile {
     display: flex;
     justify-content: center;
@@ -346,17 +356,26 @@ main > section {
     background-image: url("../assets/commerce.png");
 }
 
+.tile p {
+    padding-bottom: 1em;
+}
+
 .tile a {
-    filter: invert(95);
-    width: 100%;
+    filter: none;
+    color: rgb(244, 244, 244);
+    background-color: rgb(236, 42, 131);
+    border-radius: 10%;
+    padding: 0.3em;
+    transition: 0.2s ease-in-out;
 }
 
 .tile h3 {
+    font-size: 3vmin;
     padding: 2em 0;
 }
 
 .tile div {
-    font-size: calc(0.3rem * 1vw);
+    font-size: 2vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -367,15 +386,6 @@ main > section {
     background-color: rgba(0, 0, 0, 0.5);
     transition: 0.5s ease-in-out;
     padding: 0.5em;
-}
-
-.tile div .fas {
-    padding-top: 0.5em;
-    transition: 0.2s ease-in-out;
-}
-
-.tile div .fas:hover {
-    font-size: 3rem;
 }
 
 /********************
@@ -603,6 +613,10 @@ footer a:active  {
     .tile:hover div {
         height: 90%;
         transition: 0.5s ease-in;
+    }
+
+    .tile a:hover {
+        font-size: 2.3rem;
     }
 
     .fa {

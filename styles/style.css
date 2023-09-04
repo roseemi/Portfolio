@@ -356,6 +356,10 @@ main > section {
     background-image: url("../assets/commerce.png");
 }
 
+.tile:nth-of-type(5) {
+    background-image: url("../assets/bot.jpg");
+}
+
 .tile p {
     padding-bottom: 1em;
 }
@@ -597,15 +601,10 @@ footer a:active  {
         padding: 10em 10em;
     }
 
-    .tile {
-        max-height: 60vh;
-    }
-
     .tile div {
         display: block;
         text-align: center;
         height: 35%;
-        width: 100%;
         background-color: rgba(0, 0, 0, 0.5);
         transition: 0.5s ease-in-out;
     }
@@ -629,21 +628,13 @@ footer a:active  {
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-    .portfolio {
-        height: 100vh;
-    }
 
-    .showcase {
-        height: 100%;
-        padding: 2em;
+    .tile {
+        flex-basis: 30%;
     }
 
     .skills {
         grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
         padding: 0;
-    }
-
-    .tile {
-        flex-basis: 20%;
     }
 }

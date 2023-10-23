@@ -84,7 +84,7 @@ li {
     border-radius: 10%;
     padding: 0.3em;
     margin: 0.2em;
-    font-size: calc(0.3rem * 1vw);
+    font-size: calc(0.5rem * 1.5vw);
 }
 
 span {
@@ -374,12 +374,12 @@ main > section {
 }
 
 .tile h3 {
-    font-size: 3vmin;
+    font-size: 4vmin;
     padding: 2em 0;
 }
 
 .tile div {
-    font-size: 2vmin;
+    font-size: 3vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -625,7 +625,7 @@ footer a:active  {
     }
 
     .tile a:hover {
-        font-size: 2.3rem;
+        font-size: 3rem;
     }
 
     .fa {

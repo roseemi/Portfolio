@@ -152,7 +152,7 @@ main > section {
     /*
     Image by <a href="https://www.freepik.com/free-vector/halftone-background-with-circles_13295064.htm#query=portfolio%20background&position=21&from_view=keyword&track=ais">Freepik</a>
     */
-    background-image: url("../assets/masthead.jpg");
+    background-image: url("../assets/masthead.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -337,19 +337,19 @@ main > section {
 }
 
 .tile:nth-of-type(1).visible {
-    background-image: url("../assets/database.jpg");
+    background-image: url("../assets/database.webp");
 }
 
 .tile:nth-of-type(2).visible {
-    background-image: url("../assets/quiz.jpg");
+    background-image: url("../assets/quiz.webp");
 }
 
 .tile:nth-of-type(3).visible {
-    background-image: url("../assets/doctor.jpg");
+    background-image: url("../assets/doctor.webp");
 }
 
 .tile:nth-of-type(4).visible {
-    background-image: url("../assets/class.jpg");
+    background-image: url("../assets/class.webp");
 }
 
 .tile:nth-of-type(5).visible {
@@ -357,7 +357,7 @@ main > section {
 }
 
 .tile:nth-of-type(6).visible {
-    background-image: url("../assets/bot.jpg");
+    background-image: url("../assets/bot.webp");
 }
 
 .tile p {
